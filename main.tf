@@ -29,7 +29,7 @@ resource "aws_instance" "app" {
               sudo systemctl start docker
               sudo systemctl enable docker
               # Run the Docker container
-              sudo docker run -d --name myapp -p 80:80 ${var.docker_image}
+              sudo docker run -d --name myapp -p 5000:5000 ${var.docker_image}
               EOF
 
   tags = {
