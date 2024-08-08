@@ -30,8 +30,8 @@ resource "aws_instance" "app" {
               sudo systemctl enable docker
               # Remove existing container if it exists
               if [ $(sudo docker ps -aq -f name=myapp) ]; then
-                  sudo docker stop myapp
-                  sudo docker rm myapp
+                  sudo docker stop myapp --force
+                  sudo docker rm myapp --force
               fi
               # Run the Docker container
               sudo docker run -d --name myapp -p 5000:5000 ${var.docker_image}
