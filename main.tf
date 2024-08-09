@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "demo-vishal-docker-setup"
-    key    = "terraform/state"
+    key    = "terraform/terraform.state"
     region = "ap-south-1"
   }
 }
